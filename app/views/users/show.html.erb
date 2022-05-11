@@ -1,0 +1,26 @@
+<h1>User</h1>
+<div>
+  <%= @user.name %>
+</div>
+
+<h3>Articles</h3>
+
+<% @articles.each do |article| %>
+  <div>
+    <strong><%= article.title %></strong>
+  </div>
+  <div>
+    <strong><%= article.text %></strong>
+  </div>
+
+  <%= link_to 'article', article_path(article) %>
+
+  <hr />
+
+  <h3> Commets </h3>
+
+  <% article.comments.each do |comment| %>
+    <div> <%= comment.text %> </div>
+    <hr />
+  <% end %>
+<% end %>
